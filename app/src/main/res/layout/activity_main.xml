@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/secondColor">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/icon_big"/>
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:text="Ver 1.3"
+        android:textColor="@color/white"
+        android:onClick="createAbout"/>
+
+    <LinearLayout
+        android:id="@+id/atas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/version"
+        android:layout_marginTop="16dp"
+        android:background="@color/white">
+
+        <EditText android:id="@+id/nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="Nama atau Jenis Rumah Sakit" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner android:id="@+id/kotaSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button android:id="@+id/cariButton"
+                android:layout_height="wrap_content"
+                android:onClick="cariButtonOnClick"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Cari"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tulisan1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/atas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ketahui "/>
+
+        <TextView
+            android:id="@+id/underline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jadwal Dokter"
+            android:textColor="@color/white"
+            android:onClick="goToJadwal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" untuk beberapa RS tertentu"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tulisan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tulisan1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bingung? Buka "/>
+
+        <TextView
+            android:id="@+id/underline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Halaman Bantuan"
+            android:textColor="@color/white"
+            android:onClick="goToHelp"/>
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/right_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        fab:fab_icon="@mipmap/ic_warning_white_48dp"
+        fab:fab_addButtonColorNormal="@color/thirdColor"
+        fab:fab_addButtonColorPressed="@color/secondColor"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        fab:fab_labelsPosition="left">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@mipmap/ic_call_white_48dp"
+            fab:fab_colorNormal="@color/pink"
+            fab:fab_title="Telepon RS"
+            fab:fab_colorPressed="@color/pink_pressed"
+            android:onClick="makeCall"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@mipmap/ic_local_hospital_white_48dp"
+            fab:fab_colorNormal="@color/pink"
+            fab:fab_title="RS Terdekat"
+            fab:fab_colorPressed="@color/pink_pressed"
+            android:onClick="goToMap"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</RelativeLayout>
