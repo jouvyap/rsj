@@ -75,7 +75,6 @@ public class MainActivity extends ActionBarActivity {
         progressDialog.setMessage("Mencari RS...");
         progressDialog.setCancelable(false);
 
-
         Spinner kotaSpinner = (Spinner) findViewById(R.id.kotaSpinner);
         ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(
                 this, R.array.kota_array,
