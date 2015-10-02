@@ -41,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
 
     ArrayList<Entity> entities;
 
+    //DEVELOPMENT
 
     EditText namaTeks;
     String kota;
